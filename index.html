@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pulltorefresh</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        font: 15px/1.15 Helvetica,Arial,sans-serif
+    }
+
+    .wrap {
+        max-width: 800px;
+        padding: 0 10px;
+        margin: 0 auto
+    }
+
+    header {
+        background: #33c;
+        color: #fff;
+        padding: 20px 0;
+        position: relative;
+        z-index: 1
+    }
+
+    body,header h1 {
+        margin: 0
+    }
+
+    #main {
+        flex: 1;
+        padding-top: 20px;
+        transition: transform .3s
+    }
+
+    #footer {
+        background: #eef;
+        padding: 10px 0
+    }
+</style>
+<body>
+<header>
+    <div class="wrap">
+        <h1>pulltorefresh.js</h1>
+    </div>
+</header>
+<div id="main">
+    <div class="wrap" style="line-height: 30px;">
+        PullToRefresh.js <br>
+        API 基本配置项如下 <br>
+        mainElement: 下拉刷新的元素支持 id class tag <br>
+        iconArrow: 下拉和释放时显示的图标 <br>
+        iconRefreshing: 刷新是显示的图标 <br>
+        instructionsPullToRefresh: 下拉时显示的文本 <br>
+        instructionsReleaseToRefresh: 释放时显示的文本 <br>
+        instructionsRefreshing: 刷新时显示的文本 <br>
+        refreshTimeout: 触发刷新回调函数的延迟时间（单位-毫秒） <br>
+        onInit: 初始化回调函数 <br>
+        onRefresh: 触发刷新时的回调函数
+    </div>
+</div>
+<div id="footer">
+    <div class="wrap">
+        <a href="https://www.boxfactura.com/pulltorefresh.js/">PullToRefresh.js</a>
+    </div>
+</div>
+
+<script src="pulltorefresh.js"></script>
+<script>
+    /* global PullToRefresh */
+    PullToRefresh.init({
+        mainElement: '#main',
+        onRefresh: function() { alert('refresh') }
+    });
+</script>
+</body>
+</html>
